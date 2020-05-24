@@ -1,0 +1,36 @@
+{
+  "name": "icon-font-exporter",
+  "description": "",
+  "version": "0.1.0",
+  "engines": {
+    "sketch": ">=49.0"
+  },
+  "skpm": {
+    "name": "Icon Font Exporter",
+    "manifest": "src/manifest.json",
+    "main": "icon-font-exporter.sketchplugin",
+    "assets": [
+      "assets/**/*"
+    ],
+    "sketch-assets-file": "sketch-assets/icons.sketch"
+  },
+  "scripts": {
+    "build": "skpm-build",
+    "watch": "skpm-build --watch",
+    "start": "skpm-build --watch --run",
+    "postinstall": "npm run build && skpm-link"
+  },
+  "devDependencies": {
+    "@babel/polyfill": "^7.8.7",
+    "@skpm/builder": "^0.7.0",
+    "@skpm/dialog": "^0.4.0",
+    "@skpm/fs": "^0.2.6",
+    "iconfont-maker": "^0.0.7",
+    "sketch": "^0.2.0"
+  },
+  "author": "Joseph Ribbe <social@coderwelsch.com>",
+  "dependencies": {
+    "@skpm/child_process": "^0.4.2",
+    "icon-font-generator": "^2.1.10"
+  }
+}
