@@ -22,7 +22,7 @@ Folder Structure:
 
 ### Example `.sketchconfig.json` config:
 
-```json
+```js
 {
 	"plugins": {
 		"icon-font-exporter": { // selector/name of the plugin (it’s like a namespaces
