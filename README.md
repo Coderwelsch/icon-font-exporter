@@ -24,12 +24,12 @@ Folder Structure:
 
 ```js
 {
-	"plugins": {
-		"icon-font-exporter": { // selector/name of the plugin (it’s like a namespaces
-			"pageName": "Icons", // name of the page in Sketch containing your icon artboards
-			"output": "/Users/YOUR_USER/your_website.com/src/webfonts/" // Output folder (example)
-		}
-	}
+    "plugins": {
+        "icon-font-exporter": { // selector/name of the plugin (it’s like a namespaces
+            "pageName": "Icons", // name of the page in Sketch containing your icon artboards
+            "output": "/Users/YOUR_USER/your_website.com/src/webfonts/" // Output folder (example)
+        }
+    }
 }
 ```
 
