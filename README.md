@@ -7,7 +7,6 @@ Psst… It’s developer friendly! You can define `.sketchconfig.json` files for
 
 ## Installation
 
-- [Install Node.js](https://nodejs.org/) (REQUIRED!)
 - [Download](../../releases/latest/download/icon-font-exporter.sketchplugin.zip) the latest release of the plugin
 - Un-zip
 - Double-click on icon-font-exporter.sketchplugin
