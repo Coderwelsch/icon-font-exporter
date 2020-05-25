@@ -10,6 +10,9 @@ iconfontMaker({
 	dest: args[1],
 	fontName: "icon",
 	html: true,
+	css: true,
+	cssDest: args[1] + "styles.css",
+	htmlDest: args[1] + "index.html"
 }, function (error) {
 	if (error) {
 		throw error;

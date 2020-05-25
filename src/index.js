@@ -1,6 +1,8 @@
 import sketch from "sketch";
 import Dialog from "@skpm/dialog";
+import FileSystem from "@skpm/fs";
 import OS from "os";
+import Path from "path";
 
 import loadConfig from "./load-config";
 import exportSketchAssets from "./export-sketch-assets";
@@ -51,13 +53,15 @@ export default async () => {
 
 		try {
 			await exportIconFont(svgOutput, output);
-			stepDone(`Exported icon font to «${ config.output }» successfully`);
+			stepDone(`Exported icon font to «${ Path.basename(config.output) }» successfully`);
 		} catch (error) {
 			console.error(error);
 			sketch.UI.message("Error occured while exporting icon font");
 		}
 
-
+		// delete temp svg output dir
+		removeTempDir(svgOutput);
+		stepDone(`Cleaned up temp files`);
 	} else {
 		console.log("Error: No document selected");
 	}
@@ -75,7 +79,15 @@ function openDialog (settings) {
 	});
 }
 
+function removeTempDir (dir) {
+	try {
+		FileSystem.rmdirSync(dir, { recursive: true });
+	} catch (error) {
+		sketch.UI.message("Error: " + error.message);
+	}
+}
+
 function stepDone (message) {
 	currentSteps++;
-	sketch.UI.message(`💠 [${ currentSteps }/${ totalSteps }] ${ message }`);
+	sketch.UI.message(`💠 [${ currentSteps }/${ totalSteps }] Icon Font Exporter: ${ message }`);
 }

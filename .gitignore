@@ -1,5 +1,6 @@
 # build artifacts
 icon-font-exporter.sketchplugin
+assets/node/export-icon-font
 
 # npm
 node_modules

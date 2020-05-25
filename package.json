@@ -15,7 +15,8 @@
     "sketch-assets-file": "sketch-assets/icons.sketch"
   },
   "scripts": {
-    "build": "skpm-build",
+    "build": "npm run compile-node; skpm-build",
+	"compile-node": "pkg --target node13-macos-x64 --out-dir assets/node/ src/node/export-icon-font.js",
     "watch": "skpm-build --watch",
     "start": "skpm-build --watch --run",
     "postinstall": "npm run build && skpm-link"
@@ -23,14 +24,14 @@
   "devDependencies": {
     "@babel/polyfill": "^7.8.7",
     "@skpm/builder": "^0.7.0",
-    "@skpm/dialog": "^0.4.0",
-    "@skpm/fs": "^0.2.6",
-    "iconfont-maker": "^0.0.7",
-    "sketch": "^0.2.0"
+    "sketch": "^0.2.0",
+    "pkg": "^4.4.8"
   },
   "author": "Joseph Ribbe <social@coderwelsch.com>",
   "dependencies": {
-    "@skpm/child_process": "^0.4.2",
-    "icon-font-generator": "^2.1.10"
+    "iconfont-maker": "^0.0.7",
+    "@skpm/dialog": "^0.4.0",
+    "@skpm/fs": "^0.2.6",
+    "@skpm/child_process": "^0.4.2"
   }
 }
