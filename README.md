@@ -1,7 +1,9 @@
+![Teaser Image](./readme/teaser.png)
+
 # Icon Font Exporter
 
 Plugin that lets you export your designed icons to a web icon font. 
-Psst… It’s developer friendly! You can define ´.sketchconfig.json´ files for each Sketch project 😉 …  
+Psst… It’s developer friendly! You can define `.sketchconfig.json` files for each Sketch project 😉 …  
 
 ## Installation
 
