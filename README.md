@@ -7,7 +7,6 @@ Psst… It’s developer friendly! You can define `.sketchconfig.json` files for
 
 ## Installation
 
-- [Install Node.js](https://nodejs.org/) (REQUIRED!)
 - [Download](../../releases/latest/download/icon-font-exporter.sketchplugin.zip) the latest release of the plugin
 - Un-zip
 - Double-click on icon-font-exporter.sketchplugin
@@ -22,14 +21,14 @@ Folder Structure:
 
 ### Example `.sketchconfig.json` config:
 
-```json
+```js
 {
-	"plugins": {
-		"icon-font-exporter": { // selector/name of the plugin (it’s like a namespaces
-			"pageName": "Icons", // name of the page in Sketch containing your icon artboards
-			"output": "/Users/YOUR_USER/your_website.com/src/webfonts/" // Output folder (example)
-		}
-	}
+    "plugins": {
+        "icon-font-exporter": { // selector/name of the plugin (it’s like a namespaces
+            "pageName": "Icons", // name of the page in Sketch containing your icon artboards
+            "output": "/Users/YOUR_USER/your_website.com/src/webfonts/" // Output folder (example)
+        }
+    }
 }
 ```
 
