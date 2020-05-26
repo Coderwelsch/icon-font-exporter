@@ -1,42 +1,45 @@
 {
-  "name": "icon-font-exporter",
-  "description": "",
-  "version": "0.1.0",
-  "engines": {
-    "node": ">=13.0.0"
-  },
-  "_pkg": {
-	  "assets": [
-		  "node_modules/**/*.*"
-	  ]
-  },
-  "skpm": {
-    "name": "Icon Font Exporter",
-    "manifest": "src/manifest.json",
-    "main": "icon-font-exporter.sketchplugin",
-    "assets": [
-      "assets/**/*"
-    ],
-    "sketch-assets-file": "sketch-assets/icons.sketch"
-  },
-  "scripts": {
-    "build": "npm run compile-node; skpm-build",
-    "compile-node": "pkg --target node13-macos-x64 --out-dir assets/node/ src/node/export-icon-font.js",
-    "watch": "skpm-build --watch",
-    "start": "skpm-build --watch --run",
-    "postinstall": "npm run build && skpm-link"
-  },
-  "devDependencies": {
-    "@babel/polyfill": "^7.8.7",
-    "@skpm/builder": "^0.7.0",
-    "pkg": "^4.4.8",
-    "sketch": "^0.2.0"
-  },
-  "author": "Joseph Ribbe <social@coderwelsch.com>",
-  "dependencies": {
-    "@skpm/child_process": "^0.4.2",
-    "@skpm/dialog": "^0.4.0",
-    "@skpm/fs": "^0.2.6",
-    "iconfont-maker": "^0.0.7"
-  }
+	"name": "icon-font-exporter",
+	"bin": "src/node/export-icon-font.js",
+	"main": "src/node/export-icon-font.js",
+	"description": "Icon Font Exporter",
+	"version": "0.1.0",
+	"engines": {
+		"sketch": ">=49.0.0"
+	},
+	"pkg": {
+		"assets": [
+			"src/node/**/*"
+		]
+	},
+	"skpm": {
+		"name": "Icon Font Exporter",
+		"manifest": "src/manifest.json",
+		"main": "icon-font-exporter.sketchplugin",
+		"assets": [
+			"assets/**/*"
+		],
+		"sketch-assets-file": "sketch-assets/icons.sketch"
+	},
+	"scripts": {
+		"build": "npm run compile-node; skpm-build",
+		"build-dev": "skpm-build",
+		"compile-node": "pkg --target node13-macos-x64 --output assets/node/icon-font-exporter ./package.json",
+		"watch": "skpm-build --watch",
+		"start": "skpm-build --watch --run",
+		"postinstall": "npm run build && skpm-link"
+	},
+	"devDependencies": {
+		"@babel/polyfill": "^7.8.7",
+		"@skpm/builder": "^0.7.0",
+		"pkg": "^4.4.8",
+		"sketch": "^0.2.0"
+	},
+	"author": "Joseph Ribbe <social@coderwelsch.com>",
+	"dependencies": {
+		"@skpm/child_process": "^0.4.2",
+		"@skpm/dialog": "^0.4.0",
+		"@skpm/fs": "^0.2.6",
+		"iconfont-maker": "^0.0.7"
+	}
 }

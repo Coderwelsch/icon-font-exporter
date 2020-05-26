@@ -4,7 +4,7 @@ import { exec } from "@skpm/child_process";
 
 export default async (inputDir, outputDir) => {
 	const cwd = Path.resolve(process.cwd(), "Contents/Resources/");
-	const scriptPath = Path.resolve(cwd, "node/export-icon-font")
+	const scriptPath = Path.resolve(cwd, "node/icon-font-exporter")
 
 	await new Promise((resolve, reject) => {
 		exec(`'${ scriptPath }' '${ inputDir }' '${ outputDir }'`, (error, output, stderr) => {
